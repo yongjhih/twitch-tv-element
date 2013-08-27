@@ -1,4 +1,4 @@
-# &lt;my-element&gt;
+# &lt;twitch-tv&gt;
 
 TODO: Write a project description
 
@@ -6,9 +6,7 @@ TODO: Write a project description
 
 ## Demo
 
-![My Element]()
-
-> [Check it live](http://customelements.github.io/boilerplate-element).
+> [Check it live](http://customelements.github.io/twitch-tv).
 
 ## Usage
 
@@ -27,7 +25,7 @@ TODO: Write a project description
 3. Start using it!
 
 	```html
-	<twitch-tv</twitch-tv>
+	<twitch-tv></twitch-tv>
 	```
 
 ## Options  
