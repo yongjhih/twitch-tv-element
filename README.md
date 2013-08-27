@@ -6,7 +6,7 @@ TODO: Write a project description
 
 ## Demo
 
-> [Check it live](http://customelements.github.io/twitch-tv).
+> [Check it live](http://rsmelo.github.io/twitch-tv).
 
 ## Usage
 
