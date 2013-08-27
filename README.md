@@ -2,7 +2,7 @@
 
 Web Component wrapper for [Twitch.tv player](http://www.twitch.tv/) using Polymer.
 
-> Maintained by Rodrigo Silva de Melo(https://github.com/rsmelo).
+> Maintained by [Rodrigo Silva de Melo](https://github.com/rsmelo).
 
 ## Demo
 
@@ -28,7 +28,7 @@ Web Component wrapper for [Twitch.tv player](http://www.twitch.tv/) using Polyme
 	<twitch-tv></twitch-tv>
 	```
 
-## Options  
+## Options
 
 Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---

@@ -3,7 +3,7 @@
 
 	<template>
 		<object type="application/x-shockwave-flash" height="{{height}}" width="{{width}}" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{channel}}" bgcolor="#000000">
-			<param name="allowFullScreen" value="true" />
+			<param name="allowFullScreen" value="{{allowFullScreen}}" />
 			<param name="allowScriptAccess" value="always" />
 			<param name="allowNetworking" value="all" />
 			<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
@@ -13,11 +13,11 @@
 	</template>
 	<style>
 		a {
-			padding:2px 0px 4px; 
-			display:block; 			
-			font-weight:normal; 
-			font-size:10px; 
-			text-decoration:underline; 
+			padding:2px 0px 4px;
+			display:block;
+			font-weight:normal;
+			font-size:10px;
+			text-decoration:underline;
 			text-align:center;
 			width: {{width}}px;
 		}
