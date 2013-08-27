@@ -1,5 +1,5 @@
 <polymer-element name="twitch-tv"
-		 attributes="channel allowFullScreen autoPlay start_volume width height">
+		 attributes="channel allowFullScreen autoPlay startVolume width height">
 
 	<template>
 		<object type="application/x-shockwave-flash" height="{{height}}" width="{{width}}" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{channel}}" bgcolor="#000000">
@@ -7,7 +7,7 @@
 			<param name="allowScriptAccess" value="always" />
 			<param name="allowNetworking" value="all" />
 			<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-			<param name="flashvars" value="hostname=www.twitch.tv&channel={{channel}}&auto_play={{autoPlay}}&start_volume={{start_volume}}" />
+			<param name="flashvars" value="hostname=www.twitch.tv&channel={{channel}}&auto_play={{autoPlay}}&start_volume={{startVolume}}" />
 		</object>
 		<a href="http://www.twitch.tv/{{channel}}">Watch live video from {{channel}} Productions on www.twitch.tv</a>
 	</template>
@@ -16,12 +16,12 @@
 	<style>
 		a {
 			padding:2px 0px 4px; 
-			display:block; 
-			width: {{width}}px; 
+			display:block; 			
 			font-weight:normal; 
 			font-size:10px; 
 			text-decoration:underline; 
 			text-align:center;
+			width: {{width}}px;
 		}
 	</style>
 	<script>
@@ -31,7 +31,7 @@
 			width: 620,
 			allowFullScreen: true,
 			autoPlay: true,
-			start_volume: 25
+			startVolume: 25
 		});
 	</script>
 </polymer-element>
