@@ -6,7 +6,7 @@ Web Component wrapper for [Twitch.tv player](http://www.twitch.tv/) using Polyme
 
 ## Demo
 
-> [Check it live](http://rsmelo.github.io/twitch-tv).
+> [Check it live](http://rsmelo.github.io/twitch-tv-element).
 
 ## Usage
 
