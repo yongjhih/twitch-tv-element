@@ -1,14 +1,12 @@
-# &lt;my-element&gt;
+# &lt;twitch-tv&gt;
 
-TODO: Write a project description
+Web Component wrapper for [Twitch.tv player](http://www.twitch.tv/) using Polymer.
 
-> Maintained by [Your Name](https://github.com/yourname).
+> Maintained by Rodrigo Silva de Melo(https://github.com/rsmelo).
 
 ## Demo
 
-![My Element]()
-
-> [Check it live](http://customelements.github.io/boilerplate-element).
+> [Check it live](http://rsmelo.github.io/twitch-tv-element).
 
 ## Usage
 
@@ -21,22 +19,25 @@ TODO: Write a project description
 2. Import Custom Element:
 
 	```html
-	<link rel="import" href="src/my-element.html">
+	<link rel="import" href="src/twitch-tv.html">
 	```
 
 3. Start using it!
 
 	```html
-	<my-element></my-element>
+	<twitch-tv></twitch-tv>
 	```
 
-## Options
+## Options  
 
 Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
-`foo`      | *string*                  | `bar`               | Lorem ipsum
-`bar`      | `abc`, `def`, `ghi` 	   | `foo`               | Lorem ipsum
-`height`   | *int*                     | `100`               | Lorem ipsum
+`channel`         | *string*                  | `joindotared`       | your channel in twitch.tv
+`allowFullScreen` | *boolean* 	   | true               | fullscreen enable/disable
+`height`   | *int*                     | 378               | height of the video
+`width`   | *int*                     | 620               | width of the video
+`autoPlay`   | *boolean*                    | true               | auto play enable/disable
+`startVolume`   | *int*                    | 25               | initial volume
 
 
 ## Contributing
@@ -49,6 +50,8 @@ Attribute  | Options                   | Default             | Description
 
 ## History
 
+* v0.1.0 August 27, 2013
+	* First version of twitch-tv element
 * v0.0.1 August 19, 2013
 	* Started project using [boilerplate-element](https://github.com/customelements/boilerplate-element)
 
