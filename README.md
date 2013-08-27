@@ -1,6 +1,6 @@
 # &lt;twitch-tv&gt;
 
-TODO: Write a project description
+Web Component wrapper for [Twitch.tv player](http://www.twitch.tv/) using Polymer.
 
 > Maintained by Rodrigo Silva de Melo(https://github.com/rsmelo).
 
