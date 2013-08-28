@@ -1,15 +1,20 @@
 <polymer-element name="twitch-tv"
-		 attributes="channel allowFullScreen autoPlay startVolume width height">
+		 attributes="channel allowFullScreen autoPlay startVolume width height type archiveId">
 
 	<template>
-		<object type="application/x-shockwave-flash" height="{{height}}" width="{{width}}" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{channel}}" bgcolor="#000000">
+		<object type="application/x-shockwave-flash" height="{{height}}" width="{{width}}" id="{{type}}_embed_player_flash" data="http://www.twitch.tv/widgets/{{type}}_embed_player.swf?channel={{channel}}" bgcolor="#000000">
 			<param name="allowFullScreen" value="{{allowFullScreen}}" />
 			<param name="allowScriptAccess" value="always" />
 			<param name="allowNetworking" value="all" />
-			<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-			<param name="flashvars" value="hostname=www.twitch.tv&channel={{channel}}&auto_play={{autoPlay}}&start_volume={{startVolume}}" />
+			<param name="movie" value="http://www.twitch.tv/widgets/{{type}}_embed_player.swf" />			
+			<template if="{{ type === 'live' }}">
+				<param name="flashvars" value="hostname=www.twitch.tv&channel={{channel}}&auto_play={{autoPlay}}&start_volume={{startVolume}}" />
+			</template>
+			<template if="{{ type === 'archive' }}">				
+				<param name='flashvars' value='archive_id={{archiveId}}&amp;start_volume={{startVolume}}&amp;channel={{channel}}&amp;auto_play={{autoPlay}}'>
+			</template>
 		</object>
-		<a href="http://www.twitch.tv/{{channel}}">Watch live video from {{channel}} Productions on www.twitch.tv</a>
+		<a href="http://www.twitch.tv/{{channel}}">Watch live video from {{channel}} Productions on www.twitch.tv</a>		
 	</template> 
 	<style>
 		a {
@@ -24,6 +29,7 @@
 	<script>
 		Polymer('twitch-tv', {
 			channel: 'joindotared',
+			type: "live",
 			height: 378,
 			width: 620,
 			allowFullScreen: true,
