@@ -30,15 +30,16 @@ Web Component wrapper for [Twitch.tv player](http://www.twitch.tv/) using Polyme
 
 ## Options
 
-Attribute  | Options                   | Default             | Description
----        | ---                       | ---                 | ---
-`channel`         | *string*                  | `joindotared`       | your channel in twitch.tv
-`allowFullScreen` | *boolean* 	   | true               | fullscreen enable/disable
-`height`   | *int*                     | 378               | height of the video
-`width`   | *int*                     | 620               | width of the video
-`autoPlay`   | *boolean*                    | true               | auto play enable/disable
-`startVolume`   | *int*                    | 25               | initial volume
-
+Attribute  | Options                   | Default          | Description
+---        | ---                       | ---              | ---
+`channel`         | *string*           | `joindotared`    | your channel in twitch.tv
+`allowFullScreen` | *boolean*   	   | true             | fullscreen enable/disable
+`height`          | *int*              | 378              | height of the video
+`width`           | *int*              | 620              | width of the video
+`autoPlay`        | *boolean*          | true             | auto play enable/disable
+`startVolume`     | *int*              | 25               | initial volume
+`type`            | `live`, `archive`  | `live`           | `live` for live stream, `archive` for channel recorded videos
+`archiveId`       | *int*              | undefined        | recorded video id, only used to `archive` type, archiveId composes video url (e.g., http://www.twitch.tv/channel/b/999999)
 
 ## Contributing
 
@@ -49,6 +50,8 @@ Attribute  | Options                   | Default             | Description
 5. Submit a pull request :D
 
 ## History
+* v0.2.0 August 28, 2013
+	* Added Support for recorded videos
 * v0.1.1 August 28, 2013
 	* Changed "a" element style
 	* Using Polymer cdn
