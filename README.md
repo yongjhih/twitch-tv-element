@@ -49,7 +49,9 @@ Attribute  | Options                   | Default             | Description
 5. Submit a pull request :D
 
 ## History
-
+* v0.1.1 August 28, 2013
+	* Changed "a" element style
+	* Using Polymer cdn
 * v0.1.0 August 27, 2013
 	* First version of twitch-tv element
 * v0.0.1 August 19, 2013
