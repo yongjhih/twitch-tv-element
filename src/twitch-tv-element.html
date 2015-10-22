@@ -1,40 +1,90 @@
-<polymer-element name="twitch-tv"
-		 attributes="channel allowFullScreen autoPlay startVolume width height type archiveId">
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="twitch-tv">
 
 	<template>
-		<object type="application/x-shockwave-flash" height="{{height}}" width="{{width}}" data="http://www.twitch.tv/widgets/{{type}}_embed_player.swf?channel={{channel}}" bgcolor="#000000">
-			<param name="allowFullScreen" value="{{allowFullScreen}}" />
+		<object type="application/x-shockwave-flash" height$="{{height}}" width$="{{width}}" data="http://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" bgcolor="#000000">
+			<param name="allowFullScreen" value$="{{allowFullScreen}}" />
 			<param name="allowScriptAccess" value="always" />
 			<param name="allowNetworking" value="all" />
-			<param name="movie" value="http://www.twitch.tv/widgets/{{type}}_embed_player.swf" />			
-			<template if="{{ type === 'live' }}">
-				<param name="flashvars" value="hostname=www.twitch.tv&channel={{channel}}&auto_play={{autoPlay}}&start_volume={{startVolume}}" />
-			</template>
-			<template if="{{ type === 'archive' }}">				
-				<param name='flashvars' value='archive_id={{archiveId}}&amp;start_volume={{startVolume}}&amp;channel={{channel}}&amp;auto_play={{autoPlay}}'>
-			</template>
+			<param name="movie" value="http://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />			
+			<param name="flashvars" value="{{flashvars(channel, autoPlay, startVolume)}}" />
+			<!--<template if="{{ type === 'live' }}">-->
+				<!--<param name="flashvars" value="channel={{channel}}&auto_play={{autoPlay}}&start_volume={{startVolume}}" />-->
+			<!--</template>-->
+			<!--<template if="{{ type === 'archive' }}">				-->
+				<!--<param name='flashvars' value$='archive_id={{archiveId}}&amp;start_volume={{startVolume}}&amp;channel={{channel}}&amp;auto_play={{autoPlay}}'>-->
+			<!--</template>-->
 		</object>
-		<a href="http://www.twitch.tv/{{channel}}">Watch live video from {{channel}} Productions on www.twitch.tv</a>		
-	</template> 
-	<style>
-		a {
-			padding:2px 0px 4px;
-			display:block;
-			font-weight:normal;
-			font-size:10px;
-			text-decoration:underline;			
-			width: {{width}}px;
-		}
-	</style>
+		<a href="{{url(channel)}}">Watch live video from <span>{{channel}}</span> Productions on www.twitch.tv</a>
+
+		<style>
+			a {
+				padding:2px 0px 4px;
+				display:block;
+				font-weight:normal;
+				font-size:10px;
+				text-decoration:underline;
+				width: {{width}};
+			}
+		</style>
+	</template>
 	<script>
-		Polymer('twitch-tv', {
-			channel: 'joindotared',
-			type: "live",
-			height: 378,
-			width: 620,
-			allowFullScreen: true,
-			autoPlay: true,
-			startVolume: 25
-		});
+		(function() {
+			'use strict';
+
+			Polymer({
+				is: 'twitch-tv',
+
+				properties: {
+					channel: {
+						type: String,
+						value: 'twitchplayspokemon',
+						notify: true
+					},
+					type: {
+						type: String,
+						value: 'live'
+					},
+					height: {
+						type: String,
+						value: '378px'
+					},
+					width: {
+						type: String,
+						value: '620px'
+					},
+					allowFullScreen: {
+						type: Boolean,
+						value: true
+					},
+					autoPlay: {
+						type: Boolean,
+						value: true
+					},
+					startVolume: {
+						type: Number,
+						value: 25
+					}
+				},
+
+				url: function(channel) {
+					return "http://www.twitch.tv/" + channel;
+				},
+				flashvars: function(channel, autoPlay, startVolume) {
+					return "channel=" + channel + "&auto_play=" + autoPlay + "&start_volume=" + startVolume;
+				}
+
+			});
+		})();
 	</script>
-</polymer-element>
+</dom-module>
